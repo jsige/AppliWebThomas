@@ -46,3 +46,8 @@ c:choose>*
 /c:choose>
    
 --%> 
+
+<a href="change_style?style=bleu">Style Bleu</a>
+<a href="change_style?style=vert">Style Vert</a>
+    
+    

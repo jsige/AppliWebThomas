@@ -7,7 +7,7 @@
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 
-<link rel="stylesheet" type="text/css" href="css/style_bleu.css">
+<link rel="stylesheet" type="text/css" href="css/style_${cookie.style_prefere.getValue()}.css">
 
 
 
