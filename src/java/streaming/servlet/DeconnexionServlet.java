@@ -24,26 +24,29 @@ public class DeconnexionServlet extends HttpServlet {
 
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         
-        Cookie c;
+//        Cookie c;
+//        
+//        // Suppression des cookies
+//        
+//        c = new Cookie("login", "");
+//        c.setMaxAge(0);
+//        resp.addCookie(c);
+//        
+//        c = new Cookie("pass", "");
+//        c.setMaxAge(0);
+//        resp.addCookie(c);
+//        
+//        c = new Cookie("prenom", "");
+//        c.setMaxAge(0);
+//        resp.addCookie(c);
+//        
+//        c = new Cookie("role", "");
+//        c.setMaxAge(0);
+//        resp.addCookie(c);  Gestion par cookies
         
-        // Suppression des cookies
-        
-        c = new Cookie("login", "");
-        c.setMaxAge(0);
-        resp.addCookie(c);
-        
-        c = new Cookie("pass", "");
-        c.setMaxAge(0);
-        resp.addCookie(c);
-        
-        c = new Cookie("prenom", "");
-        c.setMaxAge(0);
-        resp.addCookie(c);
-        
-        c = new Cookie("role", "");
-        c.setMaxAge(0);
-        resp.addCookie(c);
-        
+
+        req.getSession().removeAttribute("utilconnecte");
+
         resp.sendRedirect("films_liste");
         
     }

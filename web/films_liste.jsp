@@ -52,9 +52,13 @@
                                     
                             </td>
                             <td>
-                                    <c:if test="${cookie.role.getValue()=='ADMINISTRATEUR'}">
+                                    <%-- <c:if test="${cookie.role.getValue()=='ADMINISTRATEUR'}">
+                                        <a href="supprimer_film?id_film=${film.id}">Supprimer ce film</a>
+                                    </c:if>                      Version cookies                    --%>
+                                    <c:if test="${utilconnecte.roleUtil=='ADMINISTRATEUR'}">
                                         <a href="supprimer_film?id_film=${film.id}">Supprimer ce film</a>
                                     </c:if>
+                                    
                             </td>   
                                 
                         </tr>

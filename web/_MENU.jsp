@@ -12,15 +12,24 @@
 
 
 <c:choose>
-    <c:when test="${cookie.role.getValue()=='ADMINISTRATEUR'}">
+    <%-- <c:when test="${cookie.role.getValue()=='ADMINISTRATEUR'}"> Gestion par cookies
         <a href="ajouter_film">Ajouter un Film</a>
         <a href="ajouter_serie">Ajouter une Série</a>
         <a href="deconnexion_site">DECONNEXION</a>
+    </c:when>--%>
+    
+    <c:when test="${utilconnecte.roleUtil=='ADMINISTRATEUR'}">
+        <a href="ajouter_film">Ajouter un Film</a>
+        <a href="ajouter_serie">Ajouter une Série</a>
+        <a href="deconnexion_site">DECONNEXION</a>  
     </c:when>
 </c:choose>
 
 <c:choose>
-    <c:when test="${cookie.login!=null}">
+    <%-- <c:when test="${cookie.login!=null}">   Gestion par cookies
+        <a href="deconnexion_site">DECONNEXION</a>
+    </c:when>--%>
+    <c:when test="${utilconnecte.login!=null}">
         <a href="deconnexion_site">DECONNEXION</a>
     </c:when>
     <c:otherwise>

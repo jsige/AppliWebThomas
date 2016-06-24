@@ -39,13 +39,15 @@ public class ConnexionServlet extends HttpServlet {
          
         Utilisateur util =  new UtilisateurService().connexionSite(login,pass); 
         
-        req.setAttribute("utilisateurlogge", util);
+        //req.setAttribute("utilisateurlogge", util); Version cookies
        //req.getRequestDispatcher("connexion_reusssie").forward(req, resp);
         
-       resp.addCookie(new Cookie("login", util.getLogin()));
-       resp.addCookie(new Cookie("pass", util.getMdp()));
-       resp.addCookie(new Cookie("prenom", util.getPrenom()));
-       resp.addCookie(new Cookie("role", util.getRoleUtil().toString()));
+       req.getSession().setAttribute("utilconnecte", util);
+       
+//       resp.addCookie(new Cookie("login", util.getLogin()));
+//       resp.addCookie(new Cookie("pass", util.getMdp()));
+//       resp.addCookie(new Cookie("prenom", util.getPrenom()));
+//       resp.addCookie(new Cookie("role", util.getRoleUtil().toString()));  Version cookies
         
         resp.sendRedirect("connexion_reusssie?msg=Bravo%20"+util.getLogin());     //OK pour envoi vers Requete doGet
         
